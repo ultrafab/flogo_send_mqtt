@@ -50,6 +50,16 @@ Inputs and Outputs:
       "name": "message",
       "type": "string",
       "required": true
+    },
+    {
+      "name": "cleanSession",
+      "type": "boolean",
+      "required": true
+    },
+    {
+      "name": "disconnectTimeout",
+      "type": "integer",
+      "required": true
     }
   ],
   "output": [
@@ -61,15 +71,17 @@ Inputs and Outputs:
 }
 ```
 ## Settings
-| Setting   | Description    |
-|:----------|:---------------|
-| broker    | the MQTT Broker URI (tcp://[hostname]:[port])|
-| id        | The MQTT Client ID |         
-| user      | The UserID used when connecting to the MQTT broker |
-| password  | The Password used when connecting to the MQTT broker |
-| topic     | Topic on which the message is published |
-| qos       | MQTT Quality of Service |
-| message   | The message payload |
+| Setting           | Description    |
+|:------------------|:---------------|
+| broker            | the MQTT Broker URI (tcp://[hostname]:[port])|
+| id                | The MQTT Client ID |         
+| user              | The UserID used when connecting to the MQTT broker |
+| password          | The Password used when connecting to the MQTT broker |
+| topic             | Topic on which the message is published |
+| qos               | MQTT Quality of Service |
+| cleanSession      | MQTT Clean Session |
+| disconnectTimeout | MQTT Disconnect Timeout |
+| message           | The message payload |
 
 
 ## Configuration Examples
@@ -110,13 +122,23 @@ Configure a task in flow to publish a "hello world" message on MQTT topic called
     },
     {
       "name": "qos",
-      "value": "0",
+      "value": 0,
       "type": "integer"
     },
     {
       "name": "message",
       "value": "Hello World",
       "type": "string"
+    },
+    {
+      "name": "cleanSession",
+      "value": true,
+      "type": "boolean"
+    },
+    {
+      "name": "disconnectTimeout",
+      "value": 0,
+      "type": "integer"
     }
   ]
 }
