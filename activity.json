@@ -1,0 +1,54 @@
+{
+  "name": "mqtt",
+  "type": "flogo:activity",
+  "ref": "github.com/ultrafab/flogo_send_mqtt",
+  "version": "0.0.1",
+  "title": "Send MQTT Message",
+  "description": "Pubishes message on MQTT topic",
+  "author": "Jan van der Lugt <jvanderl@tibco.com>",
+  "input":[
+   {
+      "name": "broker",
+      "type": "string"
+    },
+    {
+      "name": "id",
+      "type": "string"
+    },
+    {
+      "name": "user",
+      "type": "string"
+    },
+    {
+      "name": "password",
+      "type": "string"
+    },
+    {
+      "name": "topic",
+      "type": "string"
+    },
+    {
+      "name": "qos",
+      "type": "integer",
+      "allowed" : [0, 1, 2]
+    },
+    {
+      "name": "message",
+      "type": "string"
+    },
+    {
+      "name": "cleanSession",
+      "type": "boolean"
+    },
+    {
+      "name": "disconnectTimeout",
+      "type": "integer"
+    }
+  ],
+  "output": [
+    {
+      "name": "result",
+      "type": "string"
+    }
+  ]
+}
