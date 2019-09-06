@@ -125,7 +125,6 @@ func (a *MyActivity) Eval(context activity.Context) (done bool, err error) {
 
 	log.Debugf("MQTT Publisher connected, sending message")
 	token := client.Publish(ivtopic, byte(ivqos), false, ivpayload)
-	token.Wait()
 
 	client.Disconnect(uint(dt))
 	log.Debugf("MQTT Publisher disconnected")
